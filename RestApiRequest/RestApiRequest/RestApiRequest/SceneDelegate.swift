@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  UICollectionView
+//  RestApiRequest
 //
-//  Created by abatjarg on 6/23/20.
+//  Created by abatjarg on 6/26/20.
 //  Copyright © 2020 abatjarg. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = CollectionViewController()
+        window.rootViewController = ViewController()
         self.window = window
         window.makeKeyAndVisible()
     }
