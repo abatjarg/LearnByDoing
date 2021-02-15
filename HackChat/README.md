@@ -41,3 +41,4 @@
 ```
 
 ## Sample video
+![HackChatGif](/HackChat/images/hackchatGif.gif)
