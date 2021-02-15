@@ -12,6 +12,8 @@ class AuthService {
     
     static let instance = AuthService()
     
+    
+    
     // Register user using email and password
     func registerUser(withEmail email: String, andPassword password: String, userCreationComplete: @escaping (_ status: Bool, _ error: Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in

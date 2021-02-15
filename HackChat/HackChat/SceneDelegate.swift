@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let loginViewController = storyboard.instantiateViewController(identifier: "LoginViewController")
+            loginViewController.modalPresentationStyle = .fullScreen
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(loginViewController, animated: true, completion: nil)
         }
