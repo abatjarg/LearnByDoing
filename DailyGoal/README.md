@@ -7,7 +7,7 @@
 
 
 ## Storyboard
-![HackChat](/HackChat/images/dailygoalsstoryboard.png)
+![HackChat](/DailyGoal/images/dailygoalsstoryboard.png)
 
 
 ```bash
@@ -35,4 +35,4 @@
 ```
 
 ## Sample video
-![HackChatGif](/HackChat/images/dailygoals.gif)
+![HackChatGif](/DailyGoal/images/dailygoals.gif)
