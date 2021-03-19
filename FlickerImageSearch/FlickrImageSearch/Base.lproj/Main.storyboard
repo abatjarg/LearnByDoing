@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F35-Xi-Dnx">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FlickrImageSearch-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlickerImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7eT-Xo-CCe">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0nO-lu-Woh">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photosCollectionViewCell" id="g6K-Tr-Q8x" customClass="FlickrCollectionViewCell" customModule="FlickerImageSearch" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KFC-IZ-ayc">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-sE-2B4">
+                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8OL-YM-OWL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="WHR-sE-2B4" firstAttribute="centerX" secondItem="KFC-IZ-ayc" secondAttribute="centerX" id="5nO-pJ-Kca"/>
+                                                <constraint firstItem="8OL-YM-OWL" firstAttribute="top" secondItem="KFC-IZ-ayc" secondAttribute="top" id="6P5-Tm-ALt"/>
+                                                <constraint firstAttribute="bottom" secondItem="8OL-YM-OWL" secondAttribute="bottom" id="L7u-cc-HdL"/>
+                                                <constraint firstItem="WHR-sE-2B4" firstAttribute="centerY" secondItem="KFC-IZ-ayc" secondAttribute="centerY" id="bPK-Yj-UK9"/>
+                                                <constraint firstItem="8OL-YM-OWL" firstAttribute="leading" secondItem="KFC-IZ-ayc" secondAttribute="leading" id="qu0-Gh-jk3"/>
+                                                <constraint firstAttribute="trailing" secondItem="8OL-YM-OWL" secondAttribute="trailing" id="z7J-pB-RcB"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="8OL-YM-OWL" id="j4D-XW-F60"/>
+                                            <outlet property="spinner" destination="WHR-sE-2B4" id="ZvM-Wg-mRo"/>
+                                            <segue destination="gKb-sq-vW6" kind="show" identifier="showPhoto" id="vSf-s8-O1n"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7eT-Xo-CCe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Pt-tT-UXg"/>
+                            <constraint firstItem="7eT-Xo-CCe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3WQ-ct-jtJ"/>
+                            <constraint firstItem="7eT-Xo-CCe" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9LT-LD-tM9"/>
+                            <constraint firstItem="7eT-Xo-CCe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v1Y-ig-yqZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FlickrImageSearch" id="1df-vO-ClZ"/>
+                    <connections>
+                        <outlet property="photosCollectionView" destination="7eT-Xo-CCe" id="nrg-EY-TMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923.1884057971015" y="88.392857142857139"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Bsn-zB-tvI">
+            <objects>
+                <viewController id="gKb-sq-vW6" customClass="PhotoViewController" customModule="FlickerImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W3S-dv-Dbs">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9EG-ZP-3xT">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eiy-Vb-goF"/>
+                        <color key="backgroundColor" red="0.96854287390000005" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9EG-ZP-3xT" firstAttribute="leading" secondItem="Eiy-Vb-goF" secondAttribute="leading" id="5Xg-02-3VZ"/>
+                            <constraint firstItem="9EG-ZP-3xT" firstAttribute="bottom" secondItem="Eiy-Vb-goF" secondAttribute="bottom" id="9Re-Of-Jgg"/>
+                            <constraint firstItem="9EG-ZP-3xT" firstAttribute="top" secondItem="Eiy-Vb-goF" secondAttribute="top" id="Ba8-Ok-VyX"/>
+                            <constraint firstItem="9EG-ZP-3xT" firstAttribute="trailing" secondItem="Eiy-Vb-goF" secondAttribute="trailing" id="c2s-xV-0kV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5yd-2I-hfV"/>
+                    <connections>
+                        <outlet property="imageView" destination="9EG-ZP-3xT" id="eFu-cd-TBS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMC-cG-YKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="88"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nxQ-U2-zIA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F35-Xi-Dnx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oQj-wR-iD5">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1x5-Fl-wOH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2A-XF-6FM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
